@@ -7,6 +7,7 @@ ARG istio_version
 RUN curl -s -L http://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
 RUN echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-8 main" \
     >/etc/apt/sources.list.d/llvm.list
+RUN apt-get install --no-install-recommends -y apt-transport-https ca-certificates
 RUN apt-get update && apt-get install --no-install-recommends -y \
     libc++-8-dev libc++abi-8-dev
 
